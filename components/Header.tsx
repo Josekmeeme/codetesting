@@ -1,0 +1,1 @@
+function Header() { return <header>SmartKidStories</header>; }

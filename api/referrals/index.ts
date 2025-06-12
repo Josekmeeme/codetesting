@@ -1,0 +1,1 @@
+export default function referralApi(req, res) {}

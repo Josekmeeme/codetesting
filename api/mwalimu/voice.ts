@@ -1,0 +1,1 @@
+export default function voiceHandler(req, res) { return res.end(); }

@@ -1,0 +1,1 @@
+<GradeStoryPage grade={1} />

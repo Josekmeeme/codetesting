@@ -1,0 +1,1 @@
+<AudioPlayer src='/api/voice' />
