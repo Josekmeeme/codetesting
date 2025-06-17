@@ -1,40 +1,29 @@
-{
-  "name": "smartkidstories",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+
+  // Image domains for optimized hosting (e.g. Supabase storage or external CDN)
+  images: {
+    domains: ['cdn.jsdelivr.net', 'supabase.co', 'ik.imagekit.io'],
   },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.38.1",
-    "axios": "^1.6.7",
-    "clsx": "^2.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "next": "^14.1.4",
-    "openai": "^4.38.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.2.0",
-    "uuid": "^9.0.1",
-    "zod": "^3.22.4"
+
+  // Environment variable passthrough (safe ones)
+  env: {
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    NEXT_PUBLIC_PAYPAL_CLIENT_ID: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL
   },
-  "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.2",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.36",
-    "@types/react-dom": "^18.2.15",
-    "eslint": "^8.55.0",
-    "eslint-config-next": "^14.1.4",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.2"
+
+  // Experimental settings if needed
+  experimental: {
+    serverActions: true,
+    appDir: true
   },
-  "lint-staged": {
-    "**/*.{js,ts,tsx}": "prettier --write"
-  }
-} 
+
+  // Output directory for static export (optional)
+  output: 'standalone'
+};
+
+module.exports = nextConfig; 
