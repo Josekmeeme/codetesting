@@ -1,1 +1,116 @@
-// Placeholder for dashboard.css
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  padding: 2rem;
+}
+
+.header {
+  background-color: #1e293b;
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.headerTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.cardValue {
+  font-size: 1.6rem;
+  color: #10b981;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: #1e293b;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #334155;
+}
+
+.button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #2563eb;
+}
+
+.success {
+  color: #16a34a;
+}
+
+.warning {
+  color: #f59e0b;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.footerNote {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 3rem;
+} 
