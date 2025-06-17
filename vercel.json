@@ -1,10 +1,36 @@
-
 {
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "next.config.js",
       "use": "@vercel/next"
     }
-  ]
-}
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "M_PESA_CONSUMER_KEY": "@mpesa_consumer_key",
+    "M_PESA_CONSUMER_SECRET": "@mpesa_consumer_secret",
+    "M_PESA_SHORTCODE": "@mpesa_shortcode",
+    "M_PESA_PASSKEY": "@mpesa_passkey",
+    "PAYPAL_CLIENT_ID": "@paypal_client_id",
+    "PAYPAL_CLIENT_SECRET": "@paypal_client_secret",
+    "REFERRAL_SECRET": "@referral_secret",
+    "ADMIN_EMAIL": "@admin_email",
+    "JWT_SECRET": "@jwt_secret"
+  }
+} 
